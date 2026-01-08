@@ -1,51 +1,80 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth scroll-pt-20">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alejandro Stuardo Matus - Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
-    <script>
-      tailwind.config = {
-        darkMode: 'class',
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-            },
-            colors: {
-              primary: "#3b82f6",
-              "primary-hover": "#2563eb",
-              whatsapp: "#22c55e",
-              "whatsapp-hover": "#16a34a",
-              dark: {
-                bg: "#0f172a",
-                card: "#1e293b",
-                text: "#e2e8f0",
-                muted: "#94a3b8"
-              }
-            },
-            animation: {
-              'blob': 'blob 7s infinite',
-              'float': 'float 6s ease-in-out infinite',
-            },
-            keyframes: {
-              blob: {
-                '0%': { transform: 'translate(0px, 0px) scale(1)' },
-                '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
-                '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
-                '100%': { transform: 'translate(0px, 0px) scale(1)' },
-              },
-              float: {
-                '0%, 100%': { transform: 'translateY(0)' },
-                '50%': { transform: 'translateY(-20px)' },
-              }
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alejandro Stuardo Matus | Desarrollador de Software & Full Stack</title>
+  <meta name="description"
+    content="Portfolio profesional de Alejandro Stuardo Matus. Desarrollador de Software especializado en React, Node.js y soluciones Full Stack modernas. Explora mis proyectos y contáctame." />
+  <meta name="keywords"
+    content="Alejandro Stuardo, Desarrollador de Software, Full Stack, React, Node.js, Portfolio, Chile, Programador, Web Design" />
+  <meta name="author" content="Alejandro Stuardo Matus" />
+  <link rel="canonical" href="https://alejandrostuardo.cl" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://alejandrostuardo.cl" />
+  <meta property="og:title" content="Alejandro Stuardo Matus | Desarrollador de Software" />
+  <meta property="og:description"
+    content="Desarrollador de Software especializado en crear soluciones digitales modernas y escalables. Mira mis últimos proyectos aquí." />
+  <meta property="og:image" content="/pwa-512x512.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://alejandrostuardo.cl" />
+  <meta property="twitter:title" content="Alejandro Stuardo Matus | Desarrollador de Software" />
+  <meta property="twitter:description"
+    content="Desarrollador de Software especializado en crear soluciones digitales modernas y escalables." />
+  <meta property="twitter:image" content="/pwa-512x512.png" />
+
+  <meta name="theme-color" content="#0f172a" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <link rel="apple-touch-icon" href="/pwa-192x192.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            primary: "#3b82f6",
+            "primary-hover": "#2563eb",
+            whatsapp: "#22c55e",
+            "whatsapp-hover": "#16a34a",
+            dark: {
+              bg: "#0f172a",
+              card: "#1e293b",
+              text: "#e2e8f0",
+              muted: "#94a3b8"
             }
           },
+          animation: {
+            'blob': 'blob 7s infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            blob: {
+              '0%': { transform: 'translate(0px, 0px) scale(1)' },
+              '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+              '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+              '100%': { transform: 'translate(0px, 0px) scale(1)' },
+            },
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
         },
-      }
-    </script>
+      },
+    }
+  </script>
 
   <script type="importmap">
 {
@@ -59,10 +88,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+  <link rel="stylesheet" href="/index.css">
 </head>
-  <body class="bg-gray-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
-    <div id="root"></div>
-    <script type="module" src="/index.tsx"></script>
-  </body>
+
+<body class="bg-gray-50 dark:bg-slate-900 text-slate-800 dark:text-slate-200 transition-colors duration-300">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+
 </html>
