@@ -110,7 +110,7 @@ const projects: Project[] = [
     id: 3,
     title: "Óptica Visión Pro",
     description: "Sitio web + sistema interno para ópticas. Incluye cotizador de receta con carga de imagen (Cloudinary), reserva de hora tipo calendario, formulario de contacto y panel de administración con login para gestionar cotizaciones, citas y mensajes.",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1767896077587-184a2a1a0eb1?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite", "PWA"],
     demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
     whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20Óptica%20Visión%20Pro%20(Cotizador%20+%20Agenda%20+%20Panel%20Admin).`,
