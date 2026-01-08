@@ -112,7 +112,7 @@ const projects: Project[] = [
     description: "Sitio web + sistema interno para ópticas. Incluye cotizador de receta con carga de imagen (Cloudinary), reserva de hora tipo calendario, formulario de contacto y panel de administración con login para gestionar cotizaciones, citas y mensajes.",
     image: "https://images.unsplash.com/photo-1767896077587-184a2a1a0eb1?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite", "PWA"],
-    demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
+    demoUrl: "https://optica-vision-green.vercel.app/",
     whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20Óptica%20Visión%20Pro%20(Cotizador%20+%20Agenda%20+%20Panel%20Admin).`,
     details: {
       problemSolved: "Óptica Visión Pro digitaliza el flujo típico de una óptica: el cliente puede cotizar su receta y reservar una visita en minutos, mientras que el negocio recibe todo ordenado en un panel interno con estados y seguimiento.\n\nEl sistema reduce la fricción de atención por WhatsApp, evita pérdidas de información y mejora la conversión (cotización → contacto → visita en tienda).",
