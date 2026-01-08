@@ -105,6 +105,77 @@ const projects: Project[] = [
         { name: "Auth / Roles", description: "Seguridad y control de acceso" }
       ]
     }
+  },
+  {
+    id: 3,
+    title: "Óptica Visión Pro",
+    description: "Sitio web + sistema interno para ópticas. Incluye cotizador de receta con carga de imagen (Cloudinary), reserva de hora tipo calendario, formulario de contacto y panel de administración con login para gestionar cotizaciones, citas y mensajes.",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop",
+    tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite", "PWA"],
+    demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
+    whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20Óptica%20Visión%20Pro%20(Cotizador%20+%20Agenda%20+%20Panel%20Admin).`,
+    details: {
+      problemSolved: "Óptica Visión Pro digitaliza el flujo típico de una óptica: el cliente puede cotizar su receta y reservar una visita en minutos, mientras que el negocio recibe todo ordenado en un panel interno con estados y seguimiento.\n\nEl sistema reduce la fricción de atención por WhatsApp, evita pérdidas de información y mejora la conversión (cotización → contacto → visita en tienda).",
+      highlightsTitle: "Funcionalidades Principales",
+      highlights: [
+        "Cotizador de receta con ingreso de parámetros (OD/OI) y folio automático",
+        "Carga de foto/archivo de receta con subida a Cloudinary",
+        "Reserva de hora con calendario mensual + selección de horario",
+        "Formulario de contacto guardado en base de datos",
+        "Panel de administración con login (Firebase Auth) y gestión por estados"
+      ],
+      featuresTitle: "Módulos y Gestión",
+      featureSections: [
+        {
+          title: "Cotizaciones (Recetas)",
+          items: [
+            "Formulario de receta (OD/OI: esfera, cilindro, eje + D.P.)",
+            "Selección de tipo de lente y material",
+            "Generación de folio de cotización",
+            "Guardado en Firestore con estado (Pendiente / Contactado / Finalizado)",
+            "Acceso rápido a WhatsApp para contacto"
+          ]
+        },
+        {
+          title: "Agenda (Reservas)",
+          items: [
+            "Calendario mensual con bloqueo de fechas pasadas",
+            "Selección de horario (slots configurables)",
+            "Reserva con datos del paciente/cliente",
+            "Guardado en Firestore con estados (pendiente / realizado / no_asistio)",
+            "Confirmación de reserva (pantalla de confirmación)"
+          ]
+        },
+        {
+          title: "Panel Administrativo",
+          items: [
+            "Login protegido (Firebase Authentication)",
+            "Dashboard con métricas: cotizaciones pendientes, citas de hoy, mensajes nuevos",
+            "Gestión de estados para cotizaciones y citas",
+            "Bandeja de mensajes con actualización en tiempo real (onSnapshot)",
+            "Eliminar / archivar mensajes desde el panel"
+          ]
+        },
+        {
+          title: "Sitio Público y Experiencia",
+          items: [
+            "Landing moderna 100% responsive (Tailwind)",
+            "Sección 'Nosotros' y servicios",
+            "PWA (instalable) con autoUpdate",
+            "Integración opcional con Apps Script para notificaciones (hook ya preparado)"
+          ]
+        }
+      ],
+      techStack: [
+        { name: "React + TypeScript", description: "Frontend moderno con tipado y componentes" },
+        { name: "Vite", description: "Build rápido y entorno de desarrollo ágil" },
+        { name: "Tailwind CSS", description: "UI responsive y estilo profesional" },
+        { name: "Firebase Auth", description: "Login seguro para panel administrativo" },
+        { name: "Firestore", description: "Base de datos en la nube (citas, cotizaciones, mensajes)" },
+        { name: "Cloudinary", description: "Subida de imágenes/archivos de receta" },
+        { name: "PWA", description: "Aplicación instalable con manifest y autoUpdate" }
+      ]
+    }
   }
 ];
 
@@ -119,6 +190,20 @@ const Projects: React.FC = () => {
 
   const handleCloseModal = () => {
     setSelectedProject(null);
+  };
+
+  const getTagStyles = (tag: string) => {
+    switch (tag) {
+      case 'React': return 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300';
+      case 'Node.js': return 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300';
+      case 'MongoDB': return 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300';
+      case 'Tailwind': return 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300';
+      case 'Firebase': return 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300';
+      case 'TypeScript': return 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300';
+      case 'Vite': return 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300';
+      case 'PWA': return 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300';
+      default: return 'bg-slate-100 text-slate-800 dark:bg-slate-900/30 dark:text-slate-300';
+    }
   };
 
   return (
@@ -169,12 +254,7 @@ const Projects: React.FC = () => {
 
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.tags.map((tag) => (
-                    <span key={tag} className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium 
-                      ${tag === 'React' ? 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300' : ''}
-                      ${tag === 'Node.js' ? 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300' : ''}
-                      ${tag === 'MongoDB' ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/30 dark:text-emerald-300' : ''}
-                      ${tag === 'Tailwind' ? 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300' : ''}
-                    `}>
+                    <span key={tag} className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium ${getTagStyles(tag)}`}>
                       {tag}
                     </span>
                   ))}
