@@ -178,20 +178,31 @@ const Skills: React.FC = () => {
     const el = chartWrapRef.current;
     if (!el) return;
 
+    let timeoutId: NodeJS.Timeout;
+
     const check = () => {
-      const w = el.getBoundingClientRect().width;
-      if (w > 0) setChartReady(true);
+      const rect = el.getBoundingClientRect();
+      if (rect.width > 0) {
+        // Pequeño delay para asegurar que el contenedor esté estable
+        timeoutId = setTimeout(() => {
+          setChartReady(true);
+        }, 100);
+      }
     };
 
-    // Primer render + siguiente frame (cuando el layout ya se acomodó)
+    // Primer render
     check();
-    requestAnimationFrame(check);
 
-    // Responde a cambios de tamaño (responsive / sticky / etc.)
-    const ro = new ResizeObserver(check);
+    // Responde a cambios de tamaño
+    const ro = new ResizeObserver(() => {
+      check();
+    });
     ro.observe(el);
 
-    return () => ro.disconnect();
+    return () => {
+      ro.disconnect();
+      if (timeoutId) clearTimeout(timeoutId);
+    };
   }, []);
 
   return (
