@@ -1,12 +1,12 @@
 import React, { useState, useMemo } from 'react';
-import { 
-  LogOut, 
-  Search, 
-  Trash2, 
-  CheckCircle, 
-  Mail, 
-  User, 
-  Clock, 
+import {
+  LogOut,
+  Search,
+  Trash2,
+  CheckCircle,
+  Mail,
+  User,
+  Clock,
   Filter,
   Eye,
   Reply,
@@ -47,13 +47,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
 
   const filteredMessages = useMemo(() => {
     return messages.filter(m => {
-      const matchesSearch = 
-        m.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-        m.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        m.message.toLowerCase().includes(searchTerm.toLowerCase());
-      
+      const matchesSearch =
+        (m.name?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+        (m.email?.toLowerCase() || '').includes(searchTerm.toLowerCase()) ||
+        (m.message?.toLowerCase() || '').includes(searchTerm.toLowerCase());
+
       const matchesFilter = filterStatus === 'all' || m.status === filterStatus;
-      
+
       return matchesSearch && matchesFilter;
     });
   }, [messages, searchTerm, filterStatus]);
@@ -127,7 +127,7 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
               </div>
             </div>
             <div className="flex items-center gap-4">
-               <button 
+              <button
                 onClick={onLogout}
                 className="flex items-center gap-2 text-sm font-bold text-red-500 hover:bg-red-50 dark:hover:bg-red-900/10 px-4 py-2 rounded-lg transition-colors"
               >
@@ -160,8 +160,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
             <div className="bg-white dark:bg-slate-900 p-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm flex flex-col sm:flex-row gap-4">
               <div className="relative flex-grow">
                 <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" size={18} />
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   placeholder="Buscar..."
                   className="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-800 border-none rounded-lg text-sm text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-primary/20"
                   value={searchTerm}
@@ -173,11 +173,10 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
                   <button
                     key={s}
                     onClick={() => setFilterStatus(s)}
-                    className={`px-3 py-2 rounded-lg text-xs font-bold capitalize transition-all ${
-                      filterStatus === s 
-                        ? 'bg-primary text-white shadow-md' 
+                    className={`px-3 py-2 rounded-lg text-xs font-bold capitalize transition-all ${filterStatus === s
+                        ? 'bg-primary text-white shadow-md'
                         : 'bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 hover:bg-slate-200 dark:hover:bg-slate-700'
-                    }`}
+                      }`}
                   >
                     {s === 'all' ? 'Todos' : s === 'new' ? 'Nuevos' : s === 'read' ? 'Leídos' : 'Resp.'}
                   </button>
@@ -191,15 +190,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
                   <button
                     key={msg.id}
                     onClick={() => setSelectedMessage(msg)}
-                    className={`w-full text-left bg-white dark:bg-slate-900 p-5 rounded-2xl border transition-all hover:shadow-md group flex items-start gap-4 ${
-                      selectedMessage?.id === msg.id 
-                        ? 'border-primary ring-1 ring-primary' 
+                    className={`w-full text-left bg-white dark:bg-slate-900 p-5 rounded-2xl border transition-all hover:shadow-md group flex items-start gap-4 ${selectedMessage?.id === msg.id
+                        ? 'border-primary ring-1 ring-primary'
                         : 'border-slate-200 dark:border-slate-800'
-                    }`}
+                      }`}
                   >
-                    <div className={`p-3 rounded-full shrink-0 ${
-                      msg.status === 'new' ? 'bg-blue-100 text-blue-500' : 'bg-slate-100 text-slate-400'
-                    }`}>
+                    <div className={`p-3 rounded-full shrink-0 ${msg.status === 'new' ? 'bg-blue-100 text-blue-500' : 'bg-slate-100 text-slate-400'
+                      }`}>
                       <User size={20} />
                     </div>
                     <div className="flex-grow min-w-0">
@@ -242,13 +239,13 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
                     </div>
 
                     <div className="grid grid-cols-2 gap-4 mb-8">
-                      <button 
+                      <button
                         onClick={() => handleCopyEmail(selectedMessage.email)}
                         className="flex items-center justify-center gap-2 py-3 px-4 bg-slate-50 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-xl text-sm font-bold hover:bg-slate-100 transition-colors"
                       >
                         <Copy size={16} /> Copiar
                       </button>
-                      <a 
+                      <a
                         href={`mailto:${selectedMessage.email}`}
                         className="flex items-center justify-center gap-2 py-3 px-4 bg-primary text-white rounded-xl text-sm font-bold hover:bg-primary-hover transition-all"
                       >
@@ -268,20 +265,20 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
 
                   <div className="p-6 bg-slate-50 dark:bg-slate-800/20 flex flex-wrap gap-3 justify-between items-center">
                     <div className="flex gap-2">
-                      <button 
+                      <button
                         onClick={() => handleUpdateStatus(selectedMessage.id, 'read')}
                         className="px-4 py-2 bg-white dark:bg-slate-800 border rounded-lg text-xs font-bold hover:bg-slate-50"
                       >
                         <Eye size={14} className="inline mr-1" /> Leído
                       </button>
-                      <button 
+                      <button
                         onClick={() => handleUpdateStatus(selectedMessage.id, 'replied')}
                         className="px-4 py-2 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-lg text-xs font-bold hover:bg-emerald-100"
                       >
                         <CheckCircle size={14} className="inline mr-1" /> Respondido
                       </button>
                     </div>
-                    <button 
+                    <button
                       onClick={() => setIsDeleting(selectedMessage.id)}
                       className="px-4 py-2 bg-red-50 text-red-600 border border-red-200 rounded-lg text-xs font-bold hover:bg-red-100"
                     >
@@ -291,8 +288,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
                 </>
               ) : (
                 <div className="p-16 text-center">
-                   <Inbox className="mx-auto text-slate-200 mb-4" size={64} />
-                   <p className="text-slate-500">Selecciona un mensaje.</p>
+                  <Inbox className="mx-auto text-slate-200 mb-4" size={64} />
+                  <p className="text-slate-500">Selecciona un mensaje.</p>
                 </div>
               )}
             </div>
@@ -313,9 +310,8 @@ const AdminDashboard: React.FC<AdminDashboardProps> = ({ messages, onLogout }) =
       )}
 
       {toast && (
-        <div className={`fixed bottom-8 right-8 z-50 px-6 py-4 rounded-xl shadow-2xl animate-in slide-in-from-right-full ${
-          toast.type === 'success' ? 'bg-slate-900 text-white' : 'bg-red-600 text-white'
-        }`}>
+        <div className={`fixed bottom-8 right-8 z-50 px-6 py-4 rounded-xl shadow-2xl animate-in slide-in-from-right-full ${toast.type === 'success' ? 'bg-slate-900 text-white' : 'bg-red-600 text-white'
+          }`}>
           <span className="font-bold text-sm">{toast.message}</span>
         </div>
       )}

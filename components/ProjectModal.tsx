@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
   X, ExternalLink, MessageCircle, Sparkles, Layers, Cpu, Check,
   Atom, Database, Server, Wind, Terminal, Flame, ShieldCheck, Code,
   FileJson, Palette, BarChart, PieChart, Globe
@@ -17,7 +17,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
   // Helper function to map technology names to icons
   const getTechIcon = (name: string) => {
-    const n = name.toLowerCase();
+    const n = (name || '').toLowerCase();
     if (n.includes('react')) return <Atom size={20} className="text-cyan-400" />;
     if (n.includes('node') || n.includes('express') || n.includes('server')) return <Server size={20} className="text-green-500" />;
     if (n.includes('mongodb') || n.includes('mysql') || n.includes('sql') || n.includes('database')) return <Database size={20} className="text-emerald-500" />;
@@ -39,12 +39,12 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
       <div className="flex min-h-full items-center justify-center p-4">
         <div className="relative w-full max-w-4xl transform overflow-hidden rounded-2xl bg-white dark:bg-slate-900 text-left shadow-2xl transition-all border border-slate-200 dark:border-slate-700 flex flex-col max-h-[90vh]">
-          
+
           {/* Header with Image */}
           <div className="relative h-48 sm:h-64 w-full bg-gray-200 dark:bg-gray-800 shrink-0">
-            <img 
-              src={project.image} 
-              alt={project.title} 
+            <img
+              src={project.image}
+              alt={project.title}
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end">
@@ -63,7 +63,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
           {/* Scrollable Content */}
           <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
-            
+
             {/* 1. Descripción Ampliada */}
             <div className="mb-10">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
@@ -120,7 +120,7 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
             {/* 4. Tecnologías (Mejorado Visualmente) */}
             <div className="mb-6">
-               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
+              <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6 flex items-center gap-2">
                 <Cpu className="text-primary" />
                 Tecnologías Utilizadas
               </h3>
@@ -141,18 +141,18 @@ const ProjectModal: React.FC<ProjectModalProps> = ({ project, isOpen, onClose })
 
           {/* Footer Actions */}
           <div className="bg-gray-50 dark:bg-slate-800 px-6 py-4 border-t border-slate-100 dark:border-slate-700 flex flex-col sm:flex-row justify-end gap-3 shrink-0">
-             <a 
-              href={project.whatsappUrl} 
-              target="_blank" 
+            <a
+              href={project.whatsappUrl}
+              target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center px-6 py-2.5 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-whatsapp hover:bg-whatsapp-hover transition-all transform hover:scale-[1.02]"
             >
               <MessageCircle size={18} className="mr-2" /> Consultar por WhatsApp
             </a>
-            <a 
-              href={project.demoUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center justify-center px-6 py-2.5 border border-transparent rounded-lg shadow-sm text-sm font-bold text-white bg-primary hover:bg-primary-hover transition-all transform hover:scale-[1.02]"
             >
               <ExternalLink size={18} className="mr-2" /> Visitar Sitio Web
