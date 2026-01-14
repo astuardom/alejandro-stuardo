@@ -110,7 +110,7 @@ const projects: Project[] = [
     id: 3,
     title: "Óptica Visión Pro",
     description: "Sitio web + sistema interno para ópticas. Incluye cotizador de receta con carga de imagen (Cloudinary), reserva de hora tipo calendario, formulario de contacto y panel de administración con login para gestionar cotizaciones, citas y mensajes.",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1768415859611-4a47c5396891?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite", "PWA"],
     demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
     whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20Óptica%20Visión%20Pro%20(Cotizador%20+%20Agenda%20+%20Panel%20Admin).`,
@@ -183,7 +183,7 @@ const projects: Project[] = [
     description:
       "Landing + sistema de reservas para psicólogos. Incluye agenda tipo calendario con horarios fijos, confirmación de reserva, formulario de contacto y panel de administración con login para gestionar citas y mensajes en tiempo real (Firebase).",
     image:
-      "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1768415821460-0de356f7061a?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite"],
     demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
     whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20MenteSana%20(Agenda%20+%20Contacto%20+%20Panel%20Admin%20para%20psicólogos).`,
