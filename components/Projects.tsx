@@ -110,9 +110,9 @@ const projects: Project[] = [
     id: 3,
     title: "Óptica Visión Pro",
     description: "Sitio web + sistema interno para ópticas. Incluye cotizador de receta con carga de imagen (Cloudinary), reserva de hora tipo calendario, formulario de contacto y panel de administración con login para gestionar cotizaciones, citas y mensajes.",
-    image: "https://images.unsplash.com/photo-1767896077587-184a2a1a0eb1?q=80&w=2070&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop",
     tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite", "PWA"],
-    demoUrl: "https://optica-vision-green.vercel.app/",
+    demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
     whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20Óptica%20Visión%20Pro%20(Cotizador%20+%20Agenda%20+%20Panel%20Admin).`,
     details: {
       problemSolved: "Óptica Visión Pro digitaliza el flujo típico de una óptica: el cliente puede cotizar su receta y reservar una visita en minutos, mientras que el negocio recibe todo ordenado en un panel interno con estados y seguimiento.\n\nEl sistema reduce la fricción de atención por WhatsApp, evita pérdidas de información y mejora la conversión (cotización → contacto → visita en tienda).",
@@ -174,6 +174,80 @@ const projects: Project[] = [
         { name: "Firestore", description: "Base de datos en la nube (citas, cotizaciones, mensajes)" },
         { name: "Cloudinary", description: "Subida de imágenes/archivos de receta" },
         { name: "PWA", description: "Aplicación instalable con manifest y autoUpdate" }
+      ]
+    }
+  },
+  {
+    id: 4,
+    title: "MenteSana - Gestión de Terapia Psicológica",
+    description:
+      "Landing + sistema de reservas para psicólogos. Incluye agenda tipo calendario con horarios fijos, confirmación de reserva, formulario de contacto y panel de administración con login para gestionar citas y mensajes en tiempo real (Firebase).",
+    image:
+      "https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=2070&auto=format&fit=crop",
+    tags: ["React", "TypeScript", "Firebase", "Tailwind", "Vite"],
+    demoUrl: "", // (pon aquí tu URL de despliegue: Vercel/Netlify/Render)
+    whatsappUrl: `https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20me%20interesó%20MenteSana%20(Agenda%20+%20Contacto%20+%20Panel%20Admin%20para%20psicólogos).`,
+    details: {
+      problemSolved:
+        "MenteSana digitaliza el flujo típico de un profesional de salud mental: el paciente puede agendar una sesión en minutos y el terapeuta gestiona citas y mensajes desde un panel privado.\n\nReduce la fricción de agendamiento por WhatsApp, evita pérdida de información y entrega control por estados (pendiente / realizado / no_asistio) con seguimiento real.",
+      highlightsTitle: "Funcionalidades Principales",
+      highlights: [
+        "Agenda con calendario mensual + selección de horarios (slots fijos)",
+        "Bloqueo de fechas pasadas y domingos (UX + control)",
+        "Confirmación de reserva con resumen",
+        "Formulario de contacto guardado en Firestore",
+        "Panel admin con login (Firebase Auth) y gestión en tiempo real (onSnapshot)",
+        "Recordatorio rápido por WhatsApp desde el panel"
+      ],
+      featuresTitle: "Módulos y Gestión",
+      featureSections: [
+        {
+          title: "Reservas (Citas)",
+          items: [
+            "Selección de fecha en calendario mensual",
+            "Selección de horario (09:00, 10:15, 11:30, etc.)",
+            "Selección de tipo de sesión (Individual, Pareja, Evaluación, Duelo, etc.)",
+            "Validación de datos: nombre, correo, teléfono",
+            "Guardado en Firestore con estado inicial: pendiente",
+            "Pantalla de confirmación con detalle de la reserva"
+          ]
+        },
+        {
+          title: "Mensajes Web (Contacto)",
+          items: [
+            "Formulario de contacto para consultas",
+            "Guardado en Firestore",
+            "Estados del mensaje: new / read",
+            "Acciones: marcar leído / eliminar",
+            "Responder por email con mailto (atajo desde el panel)"
+          ]
+        },
+        {
+          title: "Panel Administrativo",
+          items: [
+            "Acceso protegido con Firebase Authentication",
+            "Dashboard con métricas rápidas: citas de hoy, pendientes, completadas, mensajes nuevos",
+            "Gestión por estado: pendiente / realizado / no_asistio",
+            "Filtros por fecha + búsqueda por nombre/correo/teléfono",
+            "Recordatorio por WhatsApp para próximas sesiones"
+          ]
+        },
+        {
+          title: "Sitio Público y Experiencia",
+          items: [
+            "Landing moderna y responsive (Tailwind)",
+            "Sección de enfoque profesional y servicios",
+            "Navegación clara: Inicio / Enfoque / Agendar / Contacto",
+            "Integración opcional preparada para sincronización externa vía Apps Script (hook)"
+          ]
+        }
+      ],
+      techStack: [
+        { name: "React + TypeScript", description: "SPA moderna con tipado y componentes reutilizables" },
+        { name: "Vite", description: "Build rápido y entorno de desarrollo ágil" },
+        { name: "Tailwind CSS", description: "UI responsive, limpia y profesional (config en CDN)" },
+        { name: "Firebase Auth", description: "Login seguro para panel administrativo" },
+        { name: "Firestore", description: "Base de datos en la nube (citas + mensajes, tiempo real)" }
       ]
     }
   }
