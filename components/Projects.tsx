@@ -4,7 +4,7 @@ import { ExternalLink, MessageCircle } from 'lucide-react';
 import { Project } from '../types';
 import ProjectModal from './ProjectModal';
 
-const WHATSAPP_NUMBER = "56912345678"; // Reemplaza con tu número real
+const WHATSAPP_NUMBER = "56961448079"; // Reemplaza con tu número real
 
 const projects: Project[] = [
   {
