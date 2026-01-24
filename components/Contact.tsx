@@ -5,7 +5,7 @@ interface ContactProps {
   onSubmit: (data: { name: string; email: string; message: string }) => void;
 }
 
-const WHATSAPP_NUMBER = "56912345678"; // Reemplaza con tu número real
+const WHATSAPP_NUMBER = "56961448079";
 
 const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
   const [formData, setFormData] = useState({
@@ -53,7 +53,7 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    
+
     // Validar inmediatamente si el campo ya ha sido tocado
     if (touched[name as keyof typeof touched]) {
       const error = validate(name, value);
@@ -79,10 +79,10 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Marcar todos como tocados para mostrar errores si intentan enviar vacío
     setTouched({ name: true, email: true, message: true });
-    
+
     const nameError = validate('name', formData.name);
     const emailError = validate('email', formData.email);
     const messageError = validate('message', formData.message);
@@ -116,7 +116,7 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
               <Send size={20} className="text-primary" />
               Envíame un mensaje
             </h3>
-            
+
             <form onSubmit={handleSubmit} className="space-y-5" noValidate>
               <div className="space-y-1">
                 <label htmlFor="name" className="block text-sm font-semibold text-slate-700 dark:text-slate-300 ml-1">
@@ -130,13 +130,12 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                     value={formData.name}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${
-                      touched.name && errors.name 
-                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10' 
+                    className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${touched.name && errors.name
+                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
                         : touched.name && !errors.name && formData.name
                           ? 'border-emerald-400 focus:border-emerald-500'
                           : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
-                    } dark:text-white`}
+                      } dark:text-white`}
                     placeholder="Ej: Alejandro Stuardo"
                   />
                   {touched.name && !errors.name && formData.name && (
@@ -162,13 +161,12 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                     value={formData.email}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${
-                      touched.email && errors.email 
-                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10' 
+                    className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${touched.email && errors.email
+                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
                         : touched.email && !errors.email && formData.email
                           ? 'border-emerald-400 focus:border-emerald-500'
                           : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
-                    } dark:text-white`}
+                      } dark:text-white`}
                     placeholder="nombre@ejemplo.com"
                   />
                   {touched.email && !errors.email && formData.email && (
@@ -193,13 +191,12 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                   value={formData.message}
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 resize-none ${
-                    touched.message && errors.message 
-                      ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10' 
+                  className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 resize-none ${touched.message && errors.message
+                      ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
                       : touched.message && !errors.message && formData.message
                         ? 'border-emerald-400 focus:border-emerald-500'
                         : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
-                  } dark:text-white`}
+                    } dark:text-white`}
                   placeholder="Cuéntame sobre tu proyecto o consulta..."
                 ></textarea>
                 {touched.message && errors.message && (
@@ -233,7 +230,7 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                     <p className="text-slate-600 dark:text-slate-400 mt-1">Santiago, Chile</p>
                   </div>
                 </div>
-                
+
                 <div className="flex items-start group">
                   <div className="flex-shrink-0 bg-primary/10 p-3 rounded-lg group-hover:bg-primary group-hover:text-white transition-colors duration-300">
                     <Mail className="text-primary group-hover:text-white" size={24} />
@@ -254,10 +251,10 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                 <SocialCard href="https://github.com/" icon={<Github size={22} />} label="GitHub" />
                 <SocialCard href="https://linkedin.com/" icon={<Linkedin size={22} />} label="LinkedIn" />
               </div>
-              
+
               <div className="border-t border-slate-100 dark:border-slate-700 pt-8">
                 <h4 className="font-bold text-slate-900 dark:text-white text-base mb-4">¿Necesitas una respuesta rápida?</h4>
-                <a 
+                <a
                   href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hola%20Alejandro,%20te%20contacto%20desde%20tu%20portfolio%20web.`}
                   target="_blank"
                   rel="noopener noreferrer"
