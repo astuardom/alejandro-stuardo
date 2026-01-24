@@ -131,10 +131,10 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${touched.name && errors.name
-                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
-                        : touched.name && !errors.name && formData.name
-                          ? 'border-emerald-400 focus:border-emerald-500'
-                          : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
+                      ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
+                      : touched.name && !errors.name && formData.name
+                        ? 'border-emerald-400 focus:border-emerald-500'
+                        : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
                       } dark:text-white`}
                     placeholder="Ej: Alejandro Stuardo"
                   />
@@ -162,10 +162,10 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 ${touched.email && errors.email
-                        ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
-                        : touched.email && !errors.email && formData.email
-                          ? 'border-emerald-400 focus:border-emerald-500'
-                          : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
+                      ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
+                      : touched.email && !errors.email && formData.email
+                        ? 'border-emerald-400 focus:border-emerald-500'
+                        : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
                       } dark:text-white`}
                     placeholder="nombre@ejemplo.com"
                   />
@@ -192,10 +192,10 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`block w-full rounded-xl shadow-sm py-3.5 px-4 transition-all duration-200 outline-none border-2 resize-none ${touched.message && errors.message
-                      ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
-                      : touched.message && !errors.message && formData.message
-                        ? 'border-emerald-400 focus:border-emerald-500'
-                        : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
+                    ? 'border-red-400 focus:border-red-500 bg-red-50/50 dark:bg-red-900/10'
+                    : touched.message && !errors.message && formData.message
+                      ? 'border-emerald-400 focus:border-emerald-500'
+                      : 'border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-900/50 focus:border-primary'
                     } dark:text-white`}
                   placeholder="Cuéntame sobre tu proyecto o consulta..."
                 ></textarea>
@@ -248,8 +248,8 @@ const Contact: React.FC<ContactProps> = ({ onSubmit }) => {
             <div className="bg-white dark:bg-slate-800 p-8 rounded-2xl shadow-sm border border-gray-100 dark:border-slate-700 flex-grow">
               <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-6">Redes y Comunicación</h3>
               <div className="grid grid-cols-2 gap-4 mb-8">
-                <SocialCard href="https://github.com/" icon={<Github size={22} />} label="GitHub" />
-                <SocialCard href="https://linkedin.com/" icon={<Linkedin size={22} />} label="LinkedIn" />
+                <SocialCard href="https://github.com/astuardom" icon={<Github size={22} />} label="GitHub" />
+                <SocialCard href="https://www.linkedin.com/in/alejandro-stuardo-matus/" icon={<Linkedin size={22} />} label="LinkedIn" />
               </div>
 
               <div className="border-t border-slate-100 dark:border-slate-700 pt-8">
